@@ -58,3 +58,9 @@ body.nogl #spacer{display:none}
 #ruler{position:fixed;z-index:21;left:0;right:0;top:0;height:2px;background:rgba(255,255,255,.08)}
 #ruler i{display:block;height:100%;background:linear-gradient(90deg,#555,#fff);transform-origin:0 0;transform:scaleX(0)}
 #chap{position:fixed;z-index:21;right:44px;bottom:28px;font:500 .8rem var(--f);letter-spacing:.3em;color:var(--mut)}
+
+.made{position:fixed;z-index:22;left:44px;bottom:26px;display:flex;align-items:center;gap:9px;padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(8,9,12,.55);backdrop-filter:blur(14px);color:var(--mut);font:500 .72rem var(--f);letter-spacing:.16em;text-transform:uppercase}
+.made img{height:13px;width:auto}
+.heart{background:linear-gradient(180deg,#fff,#8e94a1);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:.95rem;display:inline-block;animation:beat 2.4s ease-in-out infinite}
+@keyframes beat{0%,60%,100%{transform:scale(1)}30%{transform:scale(1.18)}}
+@media (prefers-reduced-motion:reduce){.heart{animation:none}}
