@@ -13,7 +13,11 @@ const clean = (p) => {
 };
 
 export function Router({ children }) {
-  const [path, setPath] = useState(() => clean(location.pathname));
+  const [path, setPath] = useState(() => {
+    const c = clean(location.pathname);
+    if (c !== (location.pathname.replace(/\/+$/, '') || '/')) history.replaceState({}, '', c);
+    return c;
+  });
   useEffect(() => {
     const onPop = () => setPath(clean(location.pathname));
     addEventListener('popstate', onPop);
