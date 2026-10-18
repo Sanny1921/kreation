@@ -1,9 +1,7 @@
 import { Link } from '../lib/router.jsx';
-import { EMAIL, getTier, setTier } from '../lib/perf.js';
-import { useState } from 'react';
+import { EMAIL } from '../lib/perf.js';
 
 export default function Footer() {
-  const [lite, setLite] = useState(getTier() === 'lite');
   return (
     <footer className="foot">
       <div className="wrap foot-grid">
@@ -28,23 +26,11 @@ export default function Footer() {
       </div>
       <div className="wrap made">
         <span>Made by</span>
-        <img src="/img/wordmark-sm.webp" alt="KREATION" width="92" height="15" loading="lazy" decoding="async" />
+        <img src="/img/wordmark-sm.webp" alt="KREATION" width="138" height="46" loading="lazy" decoding="async" />
         <span className="heart" aria-hidden="true">&#9829;</span>
       </div>
       <div className="wrap foot-bar">
         <span className="muted small">&copy; 2026 KREATION</span>
-        <button
-          className="lite-toggle"
-          aria-pressed={lite}
-          onClick={() => {
-            const next = !lite;
-            setLite(next);
-            setTier(next ? 'lite' : 'high', true);
-            if (!next) location.reload();
-          }}
-        >
-          {lite ? 'Lite mode: on' : 'Lite mode: off'}
-        </button>
       </div>
     </footer>
   );

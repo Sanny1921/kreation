@@ -21,15 +21,15 @@ function detect() {
   const forced = params.get('tier');
   if (forced === 'high' || forced === 'mid' || forced === 'lite') return forced;
   try {
-    if (localStorage.getItem(KEY) === '1') return 'lite';
+    localStorage.removeItem(KEY);
   } catch {}
   const nav = navigator;
   const c = nav.connection || {};
-  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return 'lite';
-  if (c.saveData || /(^|slow-)2g|3g/.test(c.effectiveType || '')) return 'lite';
+  if (c.saveData || /(^|slow-)2g/.test(c.effectiveType || '')) return 'lite';
   if (nav.deviceMemory && nav.deviceMemory <= 2) return 'lite';
   if (nav.hardwareConcurrency && nav.hardwareConcurrency <= 2) return 'lite';
   if (!webglOk()) return 'lite';
+  if ((window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) || /3g/.test(c.effectiveType || '')) return 'mid';
   if ((nav.deviceMemory && nav.deviceMemory <= 4) || (nav.hardwareConcurrency && nav.hardwareConcurrency <= 4)) return 'mid';
   return 'high';
 }
