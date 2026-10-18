@@ -26,6 +26,11 @@ export default function Footer() {
           </a>
         </div>
       </div>
+      <div className="wrap made">
+        <span>Made by</span>
+        <img src="/img/wordmark-sm.webp" alt="KREATION" width="92" height="15" loading="lazy" decoding="async" />
+        <span className="heart" aria-hidden="true">&#9829;</span>
+      </div>
       <div className="wrap foot-bar">
         <span className="muted small">&copy; 2026 KREATION</span>
         <button
