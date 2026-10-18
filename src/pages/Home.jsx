@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import useStack from '../lib/useStack.js';
 import { Link } from '../lib/router.jsx';
 import { waLink } from '../lib/perf.js';
 import { PROJECTS, SERVICES, STEPS } from '../lib/data.js';
@@ -9,6 +11,10 @@ import ErrorBoundary from '../components/ErrorBoundary.jsx';
 
 export default function Home() {
   const featured = PROJECTS.slice(0, 3);
+  const svcRef = useRef(null);
+  const wrkRef = useRef(null);
+  useStack(svcRef);
+  useStack(wrkRef);
   return (
     <>
       <section className="hero wrap">
@@ -45,16 +51,16 @@ export default function Home() {
             <p className="eyebrow">What we do</p>
             <h2>One small team. Three things done well.</h2>
           </Reveal>
-          <div className="grid3">
+          <div className="stack-list svc-stack" ref={svcRef}>
             {SERVICES.map((s, i) => (
-              <Reveal key={s.id} delay={i * 70}>
+              <div className="stk" key={s.id} style={{ '--i': i }}><div className="stk-in"><Reveal>
                 <Card3D as={Link} to="/services" className="card svc-card">
                   <span className="num">{s.n}</span>
                   <h3>{s.title}</h3>
                   <p className="muted">{s.lead}</p>
                   <span className="more">Details &rarr;</span>
                 </Card3D>
-              </Reveal>
+              </Reveal></div></div>
             ))}
           </div>
         </section>
@@ -66,9 +72,9 @@ export default function Home() {
             <p className="eyebrow">Selected work</p>
             <h2>Built, live, and open on your phone right now.</h2>
           </Reveal>
-          <div className="grid3 work-grid">
+          <div className="stack-list work-stack" ref={wrkRef}>
             {featured.map((p, i) => (
-              <Reveal key={p.id} delay={i * 70}>
+              <div className="stk" key={p.id} style={{ '--i': i }}><div className="stk-in"><Reveal>
                 <Card3D as="a" href={p.url} target="_blank" rel="noopener noreferrer" className="card proj" aria-label={`${p.title}, opens the live site`}>
                   <Img src={p.img} alt={`${p.title} on a phone`} width={520} height={1126} className="shot" />
                   <div className="proj-b">
@@ -77,7 +83,7 @@ export default function Home() {
                     <span className="more">View live &#8599;</span>
                   </div>
                 </Card3D>
-              </Reveal>
+              </Reveal></div></div>
             ))}
           </div>
           <Reveal className="center">
