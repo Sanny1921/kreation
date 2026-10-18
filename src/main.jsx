@@ -5,7 +5,7 @@ import App from './App.jsx';
 import ErrorBoundary from './components/ErrorBoundary.jsx';
 
 document.documentElement.classList.add('js');
-createRoot(document.getElementById('root')).render(
+if (!window.__d3) createRoot(document.getElementById('root')).render(
   <ErrorBoundary fullPage>
     <App />
   </ErrorBoundary>
