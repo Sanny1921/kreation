@@ -38,11 +38,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <ul className="chips" aria-label="What to expect">
-          <li>Mobile-first</li>
-          <li>Light on slow networks</li>
-          <li>Preview before launch</li>
-        </ul>
       </section>
 
       <ErrorBoundary>
