@@ -11,7 +11,7 @@ body{margin:0;background:#000;color:#e8eaef;font:400 1.05rem/1.55 var(--f);-webk
 @keyframes ld{0%,100%{opacity:.2;transform:scaleX(.4)}50%{opacity:1;transform:scaleX(1)}}
 #loader.gone{opacity:0;visibility:hidden}
 .top{position:fixed;z-index:20;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:22px 44px}
-.brand img{display:block;height:22px;width:auto}
+.brand img{display:block;height:28px;width:auto}
 .top nav{display:flex;gap:6px;padding:6px;border:1px solid var(--line);border-radius:999px;background:rgba(8,9,12,.55);backdrop-filter:blur(14px)}
 .top nav a{color:var(--mut);text-decoration:none;font-weight:500;font-size:.92rem;padding:8px 18px;border-radius:999px;transition:color .2s,background .2s}
 .top nav a:hover,.top nav a.on{color:#000;background:linear-gradient(180deg,#fff,#b9bec9)}
@@ -60,7 +60,7 @@ body.nogl #spacer{display:none}
 #chap{position:fixed;z-index:21;right:44px;bottom:28px;font:500 .8rem var(--f);letter-spacing:.3em;color:var(--mut)}
 
 .made{position:fixed;z-index:22;left:44px;bottom:26px;display:flex;align-items:center;gap:9px;padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(8,9,12,.55);backdrop-filter:blur(14px);color:var(--mut);font:500 .72rem var(--f);letter-spacing:.16em;text-transform:uppercase}
-.made img{height:13px;width:auto}
+.made img{height:18px;width:auto}
 .heart{background:linear-gradient(180deg,#fff,#8e94a1);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:.95rem;display:inline-block;animation:beat 2.4s ease-in-out infinite}
 @keyframes beat{0%,60%,100%{transform:scale(1)}30%{transform:scale(1.18)}}
 @media (prefers-reduced-motion:reduce){.heart{animation:none}}

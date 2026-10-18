@@ -81,13 +81,13 @@ async function start() {
     return g;
   };
   const glowTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d'); const gr = g.createRadialGradient(64, 64, 0, 64, 64, 64); gr.addColorStop(0, 'rgba(210,216,228,.5)'); gr.addColorStop(.5, 'rgba(120,128,145,.12)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = gr; g.fillRect(0, 0, 128, 128); return new CanvasTexture(c); })();
-  const glowAt = (x, y, z, s) => { const sp = new Sprite(new SpriteMaterial({ map: glowTex, blending: AdditiveBlending, depthWrite: false, transparent: true, opacity: 0.55, fog: false })); sp.position.set(x, y, z); sp.scale.setScalar(s); scene.add(sp); return sp; };
+  const glowAt = (x, y, z, s) => { const sp = new Sprite(new SpriteMaterial({ map: glowTex, blending: AdditiveBlending, depthWrite: false, transparent: true, opacity: 0.4, fog: false })); sp.position.set(x, y, z); sp.scale.setScalar(s); scene.add(sp); return sp; };
 
   const K1 = makeK(); K1.position.set(2.5, 0.2, 0); scene.add(K1); glowAt(2.5, 0.2, -1.2, 11);
   const K2 = makeK(); K2.position.set(-2.7, 0.2, -60); scene.add(K2); glowAt(-2.7, 0.2, -61.2, 11);
 
   // ---- floor + rings ----
-  const floor = new Mesh(new PlaneGeometry(90, 150), new MeshStandardMaterial({ color: 0x020203, metalness: 0.6, roughness: 0.55, envMapIntensity: 0.1 }));
+  const floor = new Mesh(new PlaneGeometry(90, 150), new MeshBasicMaterial({ color: 0x050506 }));
   floor.rotation.x = -Math.PI / 2; floor.position.set(0, -2.7, -35); scene.add(floor);
   const ringMat = new MeshBasicMaterial({ color: 0xcfd4de, transparent: true, opacity: 0.28, fog: true });
   const ring = (x, z, r) => { const m = new Mesh(new RingGeometry(r, r + 0.025, 96), ringMat); m.rotation.x = -Math.PI / 2; m.position.set(x, -2.69, z); scene.add(m); };
