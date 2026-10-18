@@ -7,6 +7,12 @@ const TITLES = {
   '/services': 'Services | KREATION',
   '/contact': 'Contact | KREATION'
 };
+const DESCS = {
+  '/': 'KREATION is a small web development agency in Patna. Fast, mobile-first websites and web apps, with ads and video editing to support them.',
+  '/work': 'Live projects by KREATION: Valor Cup, VANTA, CutBrief and a Prashant Pizza redesign concept. Every link opens a working site.',
+  '/services': 'Web development, ads and video editing from KREATION. Start with a fast mobile-first website, add ads and video when you are ready.',
+  '/contact': 'Contact KREATION on WhatsApp +91 92885 08305 or by email. WhatsApp is the fastest way to reach us.'
+};
 const clean = (p) => {
   const x = (p || '/').replace(/\/+$/, '') || '/';
   return TITLES[x] ? x : '/';
@@ -25,6 +31,8 @@ export function Router({ children }) {
   }, []);
   useEffect(() => {
     document.title = TITLES[path];
+    const m = document.querySelector('meta[name=description]');
+    if (m) m.setAttribute('content', DESCS[path]);
   }, [path]);
   const go = useCallback((to) => {
     const t = clean(to);
