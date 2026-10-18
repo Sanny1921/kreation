@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import useStack from '../lib/useStack.js';
 import { SERVICES, STEPS } from '../lib/data.js';
 import Reveal from '../components/Reveal.jsx';
 import Card3D from '../components/Card3D.jsx';
@@ -11,6 +13,8 @@ const FAQ = [
 ];
 
 export default function Services() {
+  const listRef = useRef(null);
+  useStack(listRef);
   return (
     <>
       <section className="pagehead wrap">
@@ -18,9 +22,9 @@ export default function Services() {
         <h1>Web, ads and video. One team.</h1>
         <p className="lead">Start with the website. Add ads and video when you are ready to bring people in.</p>
       </section>
-      <section className="wrap svc-list">
+      <section className="wrap svc-list stack-list" ref={listRef}>
         {SERVICES.map((s, i) => (
-          <Reveal key={s.id} delay={i * 50}>
+          <div className="stk" key={s.id} style={{ '--i': i }}><div className="stk-in"><Reveal delay={i * 50}>
             <Card3D className="card svc-big" id={s.id}>
               <span className="num">{s.n}</span>
               <h2 className="h3">{s.title}</h2>
@@ -34,7 +38,7 @@ export default function Services() {
                 Ask about this
               </a>
             </Card3D>
-          </Reveal>
+          </Reveal></div></div>
         ))}
       </section>
       <section className="sec wrap">
