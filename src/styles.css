@@ -129,8 +129,8 @@ input:focus,select:focus,textarea:focus{border-color:#fff}
 .foot{margin-top:84px;border-top:1px solid var(--line);background:#000;padding:34px 0 calc(var(--tab) + 40px + env(safe-area-inset-bottom))}
 .foot-grid{display:grid;gap:24px}
 .brand-t{font-weight:300;letter-spacing:.34em;margin-bottom:8px}
-.foot-links{display:grid;gap:10px;color:var(--mut)}
-.foot-links a{min-height:28px}
+.foot-links{display:grid;gap:2px;color:var(--mut)}
+.foot-links a{min-height:44px;display:flex;align-items:center}
 .foot-bar{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:12px}
 .lite-toggle{min-height:40px;border:1px solid var(--line);background:transparent;color:var(--mut);border-radius:999px;padding:0 14px;font:500 .8rem var(--f);cursor:pointer}
 
