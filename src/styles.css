@@ -22,11 +22,11 @@ ul,ol{padding:0;list-style:none}
 .scene.ready{opacity:1}
 .shade{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(120% 70% at 50% 0%,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 100%)}
 .page,.top,.tabbar,.foot{position:relative;z-index:2}
-.page{padding-top:60px;min-height:100svh;animation:pgin .35s ease both}
+.page{padding-top:calc(74px + env(safe-area-inset-top));min-height:100svh;animation:pgin .35s ease both}
 @keyframes pgin{from{opacity:0}to{opacity:1}}
 
 /* ---------- header / nav ---------- */
-.top{position:fixed;left:0;right:0;top:0;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:20;background:linear-gradient(#000 40%,rgba(0,0,0,0))}
+.top{position:fixed;left:0;right:0;top:0;height:calc(70px + env(safe-area-inset-top));display:flex;align-items:center;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top)) 16px 0;box-sizing:border-box;z-index:20;background:linear-gradient(#000 40%,rgba(0,0,0,0))}
 .brand{display:block;width:118px}
 
 .dnav{display:none}
@@ -174,7 +174,7 @@ input:focus,select:focus,textarea:focus{border-color:#fff}
   .wrap{padding:0 32px}
   .tabbar{display:none}
   .top{padding:0 32px;height:68px}
-  .page{padding-top:72px}
+  .page{padding-top:calc(88px + env(safe-area-inset-top))}
   .dnav{display:flex;gap:30px;position:absolute;left:50%;transform:translateX(-50%)}
   .dnav a{font-size:.88rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);padding:8px 2px;transition:color .15s}
   .dnav a:hover,.dnav a[aria-current=page]{color:#fff}
