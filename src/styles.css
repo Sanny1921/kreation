@@ -27,7 +27,7 @@ ul,ol{padding:0;list-style:none}
 
 /* ---------- header / nav ---------- */
 .top{position:fixed;left:0;right:0;top:0;height:calc(70px + env(safe-area-inset-top));display:flex;align-items:center;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top)) 16px 0;box-sizing:border-box;z-index:20;background:linear-gradient(#000 40%,rgba(0,0,0,0))}
-.brand{display:block;width:118px}
+.brand{display:block;width:150px}
 
 .dnav{display:none}
 .btn-sm{min-height:36px;padding:0 16px;font-size:.88rem}
@@ -178,7 +178,7 @@ input:focus,select:focus,textarea:focus{border-color:#fff}
   .dnav{display:flex;gap:30px;position:absolute;left:50%;transform:translateX(-50%)}
   .dnav a{font-size:.88rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);padding:8px 2px;transition:color .15s}
   .dnav a:hover,.dnav a[aria-current=page]{color:#fff}
-  .brand{width:140px}
+  .brand{width:176px}
   .hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;text-align:left;min-height:calc(100svh - 72px);gap:20px}
   .hero-copy{align-items:flex-start}
   .kslot{order:2;height:min(70svh,620px)}
