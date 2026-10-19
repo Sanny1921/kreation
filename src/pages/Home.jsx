@@ -49,11 +49,11 @@ export default function Home() {
           <div className="stack-list svc-stack" ref={svcRef}>
             {SERVICES.map((s, i) => (
               <div className="stk" key={s.id} style={{ '--i': i }}><div className="stk-in"><Reveal>
-                <Card3D as={Link} to="/services" className="card svc-card">
+                <Card3D as={Link} to={`/services#${s.id}`} className="card svc-card">
                   <span className="num">{s.n}</span>
                   <h3>{s.title}</h3>
                   <p className="muted">{s.lead}</p>
-                  <span className="more">Details &rarr;</span>
+                  <span className="more">Read more &rarr;</span>
                 </Card3D>
               </Reveal></div></div>
             ))}

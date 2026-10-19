@@ -50,56 +50,7 @@ export const FILTERS = [
   ['apps', 'Web apps'],
   ['ai', 'AI tools']
 ];
-export const SERVICES = [
-  {
-    id: 'sites',
-    n: '01',
-    title: 'Business websites',
-    lead: 'Fast, mobile-first websites that explain what you do in five seconds and make the next step obvious.',
-    points: [
-      'Business, portfolio and landing pages',
-      'Menus, catalogues and WhatsApp enquiry buttons',
-      'Clear layouts that read well on an average phone',
-      'Per-page titles and link previews'
-    ]
-  },
-  {
-    id: 'apps',
-    n: '02',
-    title: 'Web apps',
-    lead: 'Websites that do work for you: sign-ins, dashboards and admin panels built around how your team operates.',
-    points: [
-      'Logins, dashboards and admin panels',
-      'Leagues, fixtures, results and certificates',
-      'Ordering flows with a cart',
-      'Real-time features like chat and voice notes'
-    ]
-  },
-  {
-    id: 'motion',
-    n: '03',
-    title: '3D and motion on the web',
-    lead: 'Interactive 3D and scroll animation that makes a site memorable, with a light version for slow phones.',
-    points: [
-      '3D hero and product objects',
-      'Scroll animation and stacking cards',
-      'Automatic light fallback on weak devices',
-      'Tested for smooth scrolling on real phones'
-    ]
-  },
-  {
-    id: 'launch',
-    n: '04',
-    title: 'Speed, testing and launch',
-    lead: 'A site that loads fast, is checked before it goes live, and is looked after after launch.',
-    points: [
-      'Speed and slow-network tuning',
-      'Checks on small, large and tall phones',
-      'A private preview link before anything goes live',
-      'Fixes and updates after launch'
-    ]
-  }
-];
+export { SERVICES } from './services.js';
 export const STEPS = [
   ['Brief', 'We ask what you sell, who buys, and what you want visitors to do.'],
   ['Preview', 'You get a private preview link before anything goes live.'],

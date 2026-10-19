@@ -1,8 +1,6 @@
-import { useRef } from 'react';
-import useStack from '../lib/useStack.js';
+import { useEffect, useState } from 'react';
 import { SERVICES, STEPS } from '../lib/data.js';
 import Reveal from '../components/Reveal.jsx';
-import Card3D from '../components/Card3D.jsx';
 import { waLink } from '../lib/perf.js';
 
 const FAQ = [
@@ -13,8 +11,17 @@ const FAQ = [
 ];
 
 export default function Services() {
-  const listRef = useRef(null);
-  useStack(listRef);
+  const [open, setOpen] = useState(() => {
+    const h = typeof location !== 'undefined' ? location.hash.slice(1) : '';
+    return SERVICES.some((x) => x.id === h) ? h : null;
+  });
+  const toggle = (id) => setOpen((o) => (o === id ? null : id));
+  useEffect(() => {
+    const h = location.hash.slice(1);
+    if (!h) return;
+    const el = document.getElementById(h);
+    if (el) setTimeout(() => el.scrollIntoView({ block: 'start' }), 250);
+  }, []);
   return (
     <>
       <section className="pagehead wrap">
@@ -22,24 +29,51 @@ export default function Services() {
         <h1>Websites and web apps, built properly.</h1>
         <p className="lead">We start with a clear brief and a private preview, then build, test on real phones and launch.</p>
       </section>
-      <section className="wrap svc-list stack-list" ref={listRef}>
-        {SERVICES.map((s, i) => (
-          <div className="stk" key={s.id} style={{ '--i': i }}><div className="stk-in"><Reveal delay={i * 50}>
-            <Card3D className="card svc-big" id={s.id}>
-              <span className="num">{s.n}</span>
-              <h2 className="h3">{s.title}</h2>
-              <p className="muted">{s.lead}</p>
-              <ul className="ticks">
-                {s.points.map((p) => (
-                  <li key={p}>{p}</li>
-                ))}
-              </ul>
-              <a className="btn" href={waLink(`Hi KREATION, I am interested in ${s.title.toLowerCase()}.`)} target="_blank" rel="noopener noreferrer">
-                Ask about this
-              </a>
-            </Card3D>
-          </Reveal></div></div>
-        ))}
+      <section className="wrap acc-list">
+        {SERVICES.map((s, i) => {
+          const isOpen = open === s.id;
+          return (
+            <Reveal key={s.id} delay={i * 40}>
+              <article className={'acc' + (isOpen ? ' open' : '')} id={s.id}>
+                <button type="button" className="acc-head" aria-expanded={isOpen} aria-controls={'p-' + s.id} onClick={() => toggle(s.id)}>
+                  <span className="num">{s.n}</span>
+                  <span className="acc-title">
+                    <span className="h3">{s.title}</span>
+                    <span className="muted acc-lead">{s.lead}</span>
+                  </span>
+                  <span className="acc-plus" aria-hidden="true" />
+                </button>
+                <div className="acc-panel" id={'p-' + s.id} role="region" aria-label={s.title}>
+                  <div className="acc-clip">
+                    <div className="acc-body">
+                      <h4>What we do</h4>
+                      <p>{s.what}</p>
+                      <h4>How it works</h4>
+                      <ol className="acc-steps">
+                        {s.steps.map((t) => (
+                          <li key={t}>{t}</li>
+                        ))}
+                      </ol>
+                      <h4>What you get</h4>
+                      <ul className="ticks">
+                        {s.get.map((t) => (
+                          <li key={t}>{t}</li>
+                        ))}
+                      </ul>
+                      <h4>Who it suits</h4>
+                      <p>{s.suits}</p>
+                      <h4>Examples</h4>
+                      <p>{s.examples}</p>
+                      <a className="btn" href={waLink(`Hi KREATION, I am interested in ${s.title.toLowerCase()}.`)} target="_blank" rel="noopener noreferrer">
+                        Ask about this
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          );
+        })}
       </section>
       <section className="sec wrap">
         <Reveal>
