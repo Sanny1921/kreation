@@ -29,13 +29,10 @@ export default function Contact() {
         <Reveal>
           <Card3D className="card ct-card">
             <h2 className="h3">WhatsApp</h2>
-            <p className="muted">+91 92885 08305</p>
+            <p className="muted">Chat with us directly, usually the fastest reply.</p>
             <a className="btn btn-solid" href={waLink('Hi KREATION, I would like to talk about a project.')} target="_blank" rel="noopener noreferrer">
               Open WhatsApp
             </a>
-            <button className="btn" onClick={() => copy('+919288508305', 'wa')}>
-              {copied === 'wa' ? 'Copied' : 'Copy number'}
-            </button>
           </Card3D>
         </Reveal>
         <Reveal delay={60}>
