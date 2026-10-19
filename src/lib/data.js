@@ -16,7 +16,7 @@ export const PROJECTS = [
     kind: 'sites',
     label: 'Redesign concept',
     blurb:
-      'A redesign concept for a Patna pizza shop, built from its real menu: 20 items, size and topping picker, a cart, and a short 3D intro. Made as a pitch, not a client delivery.',
+      'A redesign concept for a pizza shop in India, built from its real menu: 20 items, size and topping picker, a cart, and a short 3D intro. Made as a pitch, not a client delivery.',
     stack: ['Vercel', 'Real menu', 'Mobile ordering'],
     url: 'https://prashant-pizza-nu.vercel.app',
     img: '/img/p-pizza.webp'
