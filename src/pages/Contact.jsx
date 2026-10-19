@@ -3,7 +3,7 @@ import { EMAIL, waLink } from '../lib/perf.js';
 import Reveal from '../components/Reveal.jsx';
 import Card3D from '../components/Card3D.jsx';
 
-const NEEDS = ['Website', 'Ads', 'Video editing', 'Not sure yet'];
+const NEEDS = ['Website', 'Web app', '3D or motion', 'Not sure yet'];
 
 export default function Contact() {
   const [name, setName] = useState('');

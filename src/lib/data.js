@@ -38,7 +38,7 @@ export const PROJECTS = [
     kind: 'ai',
     label: 'Our own tool',
     blurb:
-      'Turns a client\u2019s rough reel request into a clean editor brief. A small open-weight AI runs locally, so client messages are never uploaded.',
+      'A small web tool that turns a rough request into a clean brief. A small open-weight AI runs locally, so client messages are never uploaded.',
     stack: ['Local AI', 'Browser', 'GitHub Pages'],
     url: 'https://sanny1921.github.io/cutbrief/',
     img: '/img/p-cutbrief.webp'
@@ -52,39 +52,51 @@ export const FILTERS = [
 ];
 export const SERVICES = [
   {
-    id: 'web',
+    id: 'sites',
     n: '01',
-    title: 'Web development',
-    lead: 'Fast, mobile-first websites and web apps, built to look sharp on an average phone.',
+    title: 'Business websites',
+    lead: 'Fast, mobile-first websites that explain what you do in five seconds and make the next step obvious.',
     points: [
       'Business, portfolio and landing pages',
-      'Menus, catalogues and ordering flows',
-      'Web apps with logins, dashboards and admin panels',
-      'Speed and slow-network tuning'
+      'Menus, catalogues and WhatsApp enquiry buttons',
+      'Clear layouts that read well on an average phone',
+      'Per-page titles and link previews'
     ]
   },
   {
-    id: 'ads',
+    id: 'apps',
     n: '02',
-    title: 'Ads',
-    lead: 'Ad creatives that send the right people to your website or WhatsApp.',
+    title: 'Web apps',
+    lead: 'Websites that do work for you: sign-ins, dashboards and admin panels built around how your team operates.',
     points: [
-      'Instagram and Facebook ad creatives',
-      'Local promotion for shops, cafes and institutes',
-      'Landing pages built for a single campaign',
-      'Clear, honest messaging'
+      'Logins, dashboards and admin panels',
+      'Leagues, fixtures, results and certificates',
+      'Ordering flows with a cart',
+      'Real-time features like chat and voice notes'
     ]
   },
   {
-    id: 'video',
+    id: 'motion',
     n: '03',
-    title: 'Video editing',
-    lead: 'Short-form edits that keep people watching, cut by our editors and finished by us.',
+    title: '3D and motion on the web',
+    lead: 'Interactive 3D and scroll animation that makes a site memorable, with a light version for slow phones.',
     points: [
-      'Reels, Shorts and YouTube short-form',
-      'Motion typography and branded captions',
-      'Sound design and music',
-      'Hooks and pacing for retention'
+      '3D hero and product objects',
+      'Scroll animation and stacking cards',
+      'Automatic light fallback on weak devices',
+      'Tested for smooth scrolling on real phones'
+    ]
+  },
+  {
+    id: 'launch',
+    n: '04',
+    title: 'Speed, testing and launch',
+    lead: 'A site that loads fast, is checked before it goes live, and is looked after after launch.',
+    points: [
+      'Speed and slow-network tuning',
+      'Checks on small, large and tall phones',
+      'A private preview link before anything goes live',
+      'Fixes and updates after launch'
     ]
   }
 ];

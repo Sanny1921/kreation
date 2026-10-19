@@ -19,8 +19,8 @@ export default function Services() {
     <>
       <section className="pagehead wrap">
         <p className="eyebrow">Services</p>
-        <h1>Web, ads and video. One team.</h1>
-        <p className="lead">Start with the website. Add ads and video when you are ready to bring people in.</p>
+        <h1>Websites and web apps, built properly.</h1>
+        <p className="lead">We start with a clear brief and a private preview, then build, test on real phones and launch.</p>
       </section>
       <section className="wrap svc-list stack-list" ref={listRef}>
         {SERVICES.map((s, i) => (
