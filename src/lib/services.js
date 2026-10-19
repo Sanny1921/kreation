@@ -3,8 +3,8 @@ export const SERVICES = [
     id: 'websites',
     n: '01',
     title: 'Websites',
-    lead: 'Business, portfolio and landing pages, plus redesigns and speed fixes for sites that already exist.',
-    points: ['Business, portfolio and landing pages', 'Redesigns of old or slow sites', 'Built phone-first, tested on real phones'],
+    lead: 'Business, portfolio and landing pages, and redesigns of sites that already exist.',
+    points: ['Business, portfolio and landing pages', 'Website redesign for old or slow sites', 'Built phone-first, tested on real phones'],
     what: 'We design and build the public face of your business: a home page that explains what you do quickly, pages for your services or products, and a clear way to contact you. If you already have a site that looks dated, loads slowly or breaks on phones, we rebuild it or fix the parts that hurt most.',
     steps: [
       'We ask what you sell, who buys it and what a visitor should do next (call, message, visit, order).',
@@ -17,38 +17,38 @@ export const SERVICES = [
     examples: 'Our Prashant Pizza redesign concept (built from a real Patna shop menu, made as a pitch) and this KREATION site itself.'
   },
   {
-    id: 'stores',
+    id: 'apps',
     n: '02',
-    title: 'Stores & Ordering',
-    lead: 'Online stores with a cart and payments, plus booking, appointment and ordering systems.',
-    points: ['Product pages, cart and checkout', 'Booking and appointment flows', 'Ordering by menu, with WhatsApp handoff'],
-    what: 'We build sites where customers do something instead of only reading: buy a product, order food, or book a time. That can be a full store with a cart and online payments, or something lighter, such as a menu with a cart that sends the order to your WhatsApp.',
+    title: 'Web Apps',
+    lead: 'E-commerce stores, booking, appointment and ordering systems, logins, dashboards and admin panels.',
+    points: ['E-commerce stores with cart and payments', 'Booking, appointment and ordering systems', 'Logins, dashboards and admin panels'],
+    what: 'When a website has to do work for your business, we build it as a web app. That covers online stores where customers add products to a cart and pay, booking and appointment systems, ordering flows, and anything with sign-ins, where people see only what they should and your staff manage everything from a dashboard and admin panel.',
     steps: [
-      'We list what you sell or offer, and how you take orders or bookings today.',
-      'We choose the simplest flow that fits: full checkout with payments, or an order that arrives on WhatsApp.',
-      'We build the catalogue, cart and order or booking screens, and connect the payment or message step you chose.',
-      'We test the whole path from first tap to confirmation on phones, then you try it on a private preview before launch.'
+      'We list who uses it (customers, staff, admins) and what each of them needs to do, such as buy, book, order or manage.',
+      'We choose the simplest flow that fits: a full store with cart and online payments, a booking or ordering flow, or an order that arrives on your WhatsApp.',
+      'We agree the screens and the data first, then build in small pieces and show a working preview as we go.',
+      'We test every path from first tap to confirmation on phones, and test roles and edge cases, then launch and stay available for fixes.'
     ],
-    get: ['Product or menu pages you can update', 'A cart and checkout, or an ordering flow that fits your shop', 'Booking or appointment screens where needed', 'Order details sent to you in a form you can act on'],
-    suits: 'Local shops, restaurants and cafes, salons, coaching classes, and anyone taking orders or bookings by phone or chat today.',
-    examples: 'Prashant Pizza: a redesign concept with the real 20-item menu, size and topping picker and a cart, made as a pitch.'
+    get: ['A store with product pages, cart and checkout, if you sell online', 'Booking, appointment or ordering screens that fit how you work', 'Sign-in and role-based access', 'A dashboard and admin panel for your team'],
+    suits: 'Shops, restaurants and cafes, salons, clinics, clubs, leagues and institutes that sell, take bookings or manage people and schedules, and want to stop doing it in chats and spreadsheets.',
+    examples: 'Valor Cup, a tournament site for a college sports league with admin and captain panels, fixtures, results and certificates. VANTA, temporary chat rooms with real-time messaging, voice notes and calls. Prashant Pizza, a redesign concept with the real menu, size and topping picker and a cart, made as a pitch.'
   },
   {
-    id: 'apps',
+    id: 'integrations',
     n: '03',
-    title: 'Web Apps',
-    lead: 'Logins, dashboards, admin panels and integrations built around how your team works.',
-    points: ['Logins, dashboards and admin panels', 'Integrations: payments, WhatsApp, forms, chat', 'Real-time features in the browser'],
-    what: 'When a website has to run part of your operation, we build it as a web app: people sign in, see only what they should, and staff manage data from an admin panel. We can connect it to other tools such as payments, WhatsApp, forms and chat.',
+    title: 'Integrations',
+    lead: 'Payments, WhatsApp, forms and chat connected to your site.',
+    points: ['Payments', 'WhatsApp and contact forms', 'Chat and notifications'],
+    what: 'We connect your website to the tools that make it useful: taking payments, sending enquiries to your WhatsApp, collecting form responses, and adding chat. The goal is that a customer action on the site reaches you without anyone copying things by hand.',
     steps: [
-      'We map who uses it (visitors, staff, admins) and what each of them needs to do.',
-      'We agree the screens and the data first, so there are no surprises in the middle.',
-      'We build in small pieces and show a working preview as we go.',
-      'We test roles and edge cases, then launch and stay available for fixes.'
+      'We list the tools you already use and where information should end up.',
+      'We pick the simplest connection for each: a payment gateway, a WhatsApp message, a form that emails you, or live chat.',
+      'We wire it into the site and test every path with real test entries.',
+      'We show you a private preview, and fix anything that does not behave the way you expect.'
     ],
-    get: ['Sign-in and role-based access', 'A dashboard and admin panel for your team', 'Connections to the tools you already use', 'A system you can keep adding to'],
-    suits: 'Clubs, leagues, institutes and small businesses that manage people, schedules, results or requests, and want to stop doing it in chats and spreadsheets.',
-    examples: 'Valor Cup, a tournament site for a college sports league with admin and captain panels, fixtures, results and certificates. VANTA, temporary chat rooms with real-time messaging, voice notes and calls.'
+    get: ['Payments connected to your store or booking flow', 'WhatsApp buttons and messages that carry the customer\u2019s request', 'Forms that send responses to you', 'Chat where it makes sense for your site'],
+    suits: 'Any business that gets enquiries, orders or payments and wants them to arrive in one place, without manual follow-up.',
+    examples: 'WhatsApp enquiry buttons on our own sites, and real-time chat and voice notes in VANTA.'
   },
   {
     id: 'motion',
@@ -71,16 +71,16 @@ export const SERVICES = [
     id: 'launch',
     n: '05',
     title: 'Launch & Support',
-    lead: 'Domain, hosting, deployment, SEO basics, Google Business setup, maintenance and updates.',
-    points: ['Domain, hosting and deployment', 'SEO basics and Google Business setup', 'Maintenance and updates after launch'],
-    what: 'Building the site is half the job. We also handle the parts that stop most people from getting online: choosing and connecting a domain, hosting and deploying the site, setting up the basics that help people find you, and looking after it after launch.',
+    lead: 'Domain, hosting, deployment, setup, basic SEO, maintenance, updates and support.',
+    points: ['Domain, hosting and deployment', 'Basic SEO setup', 'Maintenance, updates and support'],
+    what: 'Building the site is half the job. We also handle the parts that stop most people from getting online: choosing and connecting a domain, hosting and deploying the site, setting up the basics that help people find you, and looking after it after launch with updates and support.',
     steps: [
       'We help you pick a domain and set up hosting that suits the site.',
       'We deploy the site and connect the domain, with a final check on every page.',
-      'We set up the basics for search: page titles, descriptions and link previews, and your Google Business profile.',
+      'We set up the basics for search: page titles, descriptions and link previews.',
       'After launch we make updates, fix issues and keep the site running. Message us and we reply.'
     ],
-    get: ['Your site live on your own domain', 'Basic search setup and a Google Business profile', 'A private preview and your approval before launch', 'Updates and fixes when you need them'],
+    get: ['Your site live on your own domain', 'Basic search setup (titles, descriptions, link previews)', 'A private preview and your approval before launch', 'Updates and fixes when you need them'],
     suits: 'Anyone who wants a site live without dealing with domains, servers and settings, and who wants someone to message when something needs changing.',
     examples: 'Every project we have shipped, including Valor Cup, VANTA and this site, goes through a preview, a check on real phones, and a launch on your go-ahead.'
   }
