@@ -27,7 +27,7 @@ export default function Home() {
             Websites with a <span className="sil">sharper edge.</span>
           </h1>
           <p className="lead">
-            KREATION is a small web development agency in India. We build fast, mobile-first websites and web apps for businesses.
+            KREATION is a web development agency in India. We build fast, mobile-first websites and web apps for businesses.
           </p>
           <div className="btn-row">
             <Link to="/work" className="btn btn-solid">
@@ -44,7 +44,7 @@ export default function Home() {
         <section className="sec wrap">
           <Reveal>
             <p className="eyebrow">What we do</p>
-            <h2>One small team. Websites that work.</h2>
+            <h2>One team. Websites that work.</h2>
           </Reveal>
           <div className="stack-list svc-stack" ref={svcRef}>
             {SERVICES.map((s, i) => (

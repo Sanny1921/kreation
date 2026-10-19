@@ -8,7 +8,7 @@ const TITLES = {
   '/contact': 'Contact | KREATION'
 };
 const DESCS = {
-  '/': 'KREATION is a small web development agency in India. Fast, mobile-first websites and web apps for businesses.',
+  '/': 'KREATION is a web development agency in India. Fast, mobile-first websites and web apps for businesses.',
   '/work': 'Live projects by KREATION: Valor Cup, VANTA, CutBrief and a Prashant Pizza redesign concept. Every link opens a working site.',
   '/services': 'Websites, web apps and 3D from KREATION. Start with a fast mobile-first website.',
   '/contact': 'Contact KREATION on WhatsApp +91 92885 08305 or by email. WhatsApp is the fastest way to reach us.'
