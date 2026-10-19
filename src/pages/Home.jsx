@@ -71,7 +71,7 @@ export default function Home() {
             {featured.map((p, i) => (
               <div className="stk" key={p.id} style={{ '--i': i }}><div className="stk-in"><Reveal>
                 <Card3D as="a" href={p.url} target="_blank" rel="noopener noreferrer" className="card proj" aria-label={`${p.title}, opens the live site`}>
-                  <Img src={p.img} alt={`${p.title} on a phone`} width={520} height={1126} className="shot" />
+                  <Img src={p.img} wideSrc={p.imgWide} alt={`${p.title} homepage`} width={1170} height={804} className="shot" />
                   <div className="proj-b">
                     <span className="tag">{p.label}</span>
                     <h3>{p.title}</h3>

@@ -8,7 +8,8 @@ export const PROJECTS = [
       'A complete tournament site for a college sports league: points table, fixtures, results, team and player pages, plus admin and captain panels, fan polls and certificates.',
     stack: ['Vercel', 'MongoDB', 'Admin roles'],
     url: 'https://valorcup.vercel.app',
-    img: '/img/p-valorcup.webp'
+    img: '/img/p-valorcup.webp',
+    imgWide: '/img/p-valorcup-hd.webp'
   },
   {
     id: 'pizza',
@@ -19,7 +20,8 @@ export const PROJECTS = [
       'A redesign concept for a Patna pizza shop, built from its real menu: 20 items, size and topping picker, a cart, and a short 3D intro. Made as a pitch, not a client delivery.',
     stack: ['Vercel', 'Real menu', 'Mobile ordering'],
     url: 'https://prashant-pizza-nu.vercel.app',
-    img: '/img/p-pizza.webp'
+    img: '/img/p-pizza.webp',
+    imgWide: '/img/p-pizza-hd.webp'
   },
   {
     id: 'vanta',
@@ -30,7 +32,8 @@ export const PROJECTS = [
       'Temporary chat rooms that disappear. Real-time messaging, voice notes and calls in the browser, with nothing stored permanently.',
     stack: ['React', 'Node', 'Socket.IO', 'WebRTC'],
     url: 'https://vanta2-0.vercel.app',
-    img: '/img/p-vanta.webp'
+    img: '/img/p-vanta.webp',
+    imgWide: '/img/p-vanta-hd.webp'
   },
   {
     id: 'cutbrief',
@@ -41,7 +44,8 @@ export const PROJECTS = [
       'A small web tool that turns a rough request into a clean brief. A small open-weight AI runs locally, so client messages are never uploaded.',
     stack: ['Local AI', 'Browser', 'GitHub Pages'],
     url: 'https://sanny1921.github.io/cutbrief/',
-    img: '/img/p-cutbrief.webp'
+    img: '/img/p-cutbrief.webp',
+    imgWide: '/img/p-cutbrief-hd.webp'
   }
 ];
 export const FILTERS = [

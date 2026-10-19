@@ -30,7 +30,7 @@ export default function Work() {
           <div className="stk" key={p.id} style={{ '--i': i }}><div className="stk-in"><Reveal>
             <Card3D className="card proj-wide">
               <a href={p.url} target="_blank" rel="noopener noreferrer" className="proj-img" aria-label={`Open ${p.title}`}>
-                <Img src={p.img} alt={`${p.title} on a phone`} width={520} height={1126} className="shot" />
+                <Img src={p.img} wideSrc={p.imgWide} alt={`${p.title} homepage`} width={1170} height={804} className="shot" />
               </a>
               <div className="proj-b">
                 <span className="tag">{p.label}</span>
