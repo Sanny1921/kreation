@@ -30,7 +30,7 @@ export function Router({ children }) {
     return () => removeEventListener('popstate', onPop);
   }, []);
   useEffect(() => {
-    document.title = TITLES[path];
+    document.title = "KREATION";
     const m = document.querySelector('meta[name=description]');
     if (m) m.setAttribute('content', DESCS[path]);
   }, [path]);
