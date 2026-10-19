@@ -27,7 +27,7 @@ export default function Home() {
             Websites with a <span className="sil">sharper edge.</span>
           </h1>
           <p className="lead">
-            KREATION is a small web development agency in Patna. We build fast, mobile-first websites and web apps for businesses.
+            KREATION is a small web development agency in India. We build fast, mobile-first websites and web apps for businesses.
           </p>
           <div className="btn-row">
             <Link to="/work" className="btn btn-solid">

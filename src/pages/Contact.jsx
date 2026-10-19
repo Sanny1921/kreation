@@ -83,7 +83,7 @@ export default function Contact() {
         </Reveal>
       </section>
       <section className="wrap sec">
-        <p className="muted center">Based in Patna, Bihar, India.</p>
+        <p className="muted center">Based in India.</p>
       </section>
     </>
   );

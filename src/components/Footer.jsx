@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="wrap foot-grid">
         <div>
           <p className="brand-t">KREATION</p>
-          <p className="muted small">Web development for businesses. Based in Patna, India.</p>
+          <p className="muted small">Web development for businesses. Based in India.</p>
         </div>
         <div className="foot-links">
           <Link to="/work">Work</Link>
