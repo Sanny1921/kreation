@@ -254,7 +254,8 @@ export async function createScene(canvas, opts) {
     key.position.x = Math.sin(t * 0.7) * 3;
 
     // dim on text-heavy pages
-    canvas.style.opacity = !readyFired ? '' : route === '/' ? String(1 - smooth(innerHeight * 0.4, innerHeight * 1.6, scrollY) * 0.5) : '0.6';
+    const wideNow = innerWidth / Math.min(innerHeight, H || innerHeight) > 1.1;
+    canvas.style.opacity = !readyFired ? '' : route === '/' ? String(1 - smooth(innerHeight * 0.4, innerHeight * 1.6, scrollY) * 0.5) : wideNow ? '0.6' : '0';
 
     if (window.__kdbg) window.__kdbg.v = { size, pos: K.position.toArray(), st: { ...st }, W, H, slot, ww, hh, rot: K.rotation.toArray().slice(0, 3) };
     renderer.render(scene, camera);

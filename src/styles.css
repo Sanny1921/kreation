@@ -241,3 +241,5 @@ input:focus,select:focus,textarea:focus{border-color:#fff}
 .hp{position:absolute!important;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 .prose{display:grid;gap:22px;max-width:640px}
 .thanks{gap:14px}
+.acc-stack{margin-top:26px}
+.acc-stack .acc{background:#0b0c10}
