@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { EMAIL, waLink } from '../lib/perf.js';
 import Reveal from '../components/Reveal.jsx';
+import { Link } from '../lib/router.jsx';
 import Card3D from '../components/Card3D.jsx';
 
 const NEEDS = ['Website', 'Web app', '3D or motion', 'Not sure yet'];
 
 export default function Contact() {
   const [name, setName] = useState('');
+  const [bot, setBot] = useState('');
+  const [sent, setSent] = useState(false);
   const [need, setNeed] = useState(NEEDS[0]);
   const [msg, setMsg] = useState('');
   const [copied, setCopied] = useState('');
@@ -48,14 +51,43 @@ export default function Contact() {
           </Card3D>
         </Reveal>
         <Reveal delay={120} className="span2">
+          {sent ? (
+            <Card3D className="card form thanks" role="status">
+              <h2 className="h3">Thank you{name ? `, ${name}` : ''}.</h2>
+              <p className="muted">WhatsApp should have opened with your message ready. Press send there, and we reply as soon as we see it.</p>
+              <p className="muted">
+                Did not open? <a href={waLink(text)} target="_blank" rel="noopener noreferrer">Tap here to try again</a> or email us at{' '}
+                <a className="brk" href={`mailto:${EMAIL}`}>{EMAIL}</a>.
+              </p>
+              <button
+                className="btn"
+                type="button"
+                onClick={() => {
+                  setSent(false);
+                  setMsg('');
+                }}
+              >
+                Write another message
+              </button>
+            </Card3D>
+          ) : (
           <form
             className="card form"
             onSubmit={(e) => {
               e.preventDefault();
+              if (bot) {
+                setSent(true);
+                return;
+              }
               window.open(waLink(text), '_blank', 'noopener');
+              setSent(true);
             }}
           >
             <h2 className="h3">Write it once, send on WhatsApp</h2>
+            <label className="hp" aria-hidden="true">
+              Company
+              <input value={bot} onChange={(e) => setBot(e.target.value)} tabIndex={-1} autoComplete="off" />
+            </label>
             <label>
               Your name
               <input value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" maxLength={60} placeholder="Your name" />
@@ -77,9 +109,13 @@ export default function Contact() {
             </button>
             <p className="muted small">This opens WhatsApp with your message ready. Nothing is stored on this site.</p>
           </form>
+          )}
         </Reveal>
       </section>
       <section className="wrap sec">
+        <p className="muted center">
+          Quick questions? <Link to="/services#faq">Read the FAQ</Link>.
+        </p>
         <p className="muted center">Based in India.</p>
       </section>
     </>

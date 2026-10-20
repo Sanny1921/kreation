@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://kreation-three.vercel.app/sitemap.xml

@@ -12,7 +12,9 @@ export default function Footer() {
         <div className="foot-links">
           <Link to="/work">Work</Link>
           <Link to="/services">Services</Link>
+          <Link to="/services#faq">FAQ</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/privacy">Privacy</Link>
         </div>
         <div className="foot-links">
           <a href="https://wa.me/919288508305" target="_blank" rel="noopener noreferrer">

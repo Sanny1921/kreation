@@ -4,10 +4,14 @@ import Reveal from '../components/Reveal.jsx';
 import { waLink } from '../lib/perf.js';
 
 const FAQ = [
-  ['What does it cost?', 'Every project is quoted after a short chat, once we know the scope. Message us what you need.'],
+  ['What does it cost?', 'Every project is quoted after a short chat, once we know the scope. You hear the full price before we start, and it does not change midway.'],
+  ['How long does a website take?', 'It depends on the size. We give you a date before starting and share preview links as it is built, so you always see where things are.'],
   ['Do you work with small local businesses?', 'Yes. Shops, cafes and institutes are who we build for most.'],
   ['Will it work on my customers\u2019 phones?', 'We design on a phone first and test on small screens and slow connections before launch.'],
-  ['Can I see it before it goes live?', 'Always. You get a private preview link and approve the launch.']
+  ['Can I see it before it goes live?', 'Always. You get a private preview link and approve the launch.'],
+  ['Who owns the website and domain?', 'You do. The domain, hosting and files are set up in your name and handed over to you.'],
+  ['Will my site show up on Google?', 'We set up the basics every site needs: page titles, descriptions, a sitemap and Search Console submission. Ranking grows over time with real content, and we do not promise positions no one can guarantee.'],
+  ['What if something breaks after launch?', 'Message us on WhatsApp. Launch and support is one of our services, and we stay reachable after your site goes live.']
 ];
 
 export default function Services() {
@@ -90,7 +94,7 @@ export default function Services() {
           ))}
         </ol>
       </section>
-      <section className="sec wrap">
+      <section className="sec wrap" id="faq">
         <Reveal>
           <p className="eyebrow">Questions</p>
           <h2>Quick answers.</h2>

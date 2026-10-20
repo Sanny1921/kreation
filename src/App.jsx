@@ -7,6 +7,8 @@ import ErrorBoundary from './components/ErrorBoundary.jsx';
 import Home from './pages/Home.jsx';
 
 const Work = lazy(() => import('./pages/Work.jsx'));
+const Privacy = lazy(() => import('./pages/Privacy.jsx'));
+const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 const Services = lazy(() => import('./pages/Services.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
 
@@ -23,7 +25,7 @@ function Skeleton() {
 
 function Pages() {
   const { path } = useRoute();
-  const Page = { '/': Home, '/work': Work, '/services': Services, '/contact': Contact }[path] || Home;
+  const Page = { '/': Home, '/work': Work, '/services': Services, '/contact': Contact, '/privacy': Privacy }[path] || NotFound;
   return (
     <main key={path} className="page" data-route={path}>
       <ErrorBoundary>
