@@ -242,6 +242,4 @@ input:focus,select:focus,textarea:focus{border-color:#fff}
 .prose{display:grid;gap:22px;max-width:640px}
 .thanks{gap:14px}
 .acc-stack{margin-top:26px}
-.acc-stack .stk{top:calc(35svh + var(--i,0)*10px)}
-@media (min-width:700px){.acc-stack .stk{top:calc(30vh + var(--i,0)*12px)}}
 .acc-stack .acc{background:#0b0c10}
