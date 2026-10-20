@@ -15,7 +15,7 @@ export default function Privacy() {
           <h2 className="h3">What this site collects</h2>
           <p className="muted">
             Nothing itself. There are no accounts, no sign-ups and no tracking cookies on this website. Pages and images load from our
-            hosting provider (Vercel), which keeps standard server logs to keep the site running.
+            hosting, which keeps standard server logs to keep the site running.
           </p>
         </Reveal>
         <Reveal>
@@ -29,8 +29,8 @@ export default function Privacy() {
         <Reveal>
           <h2 className="h3">Visit counting</h2>
           <p className="muted">
-            We use Vercel Analytics to count visits and see which pages are read. It is anonymous: no cookies, no names, no following
-            you around other websites. It tells us &quot;someone read the work page&quot;, never who.
+            We use a simple, anonymous visit counter to see which pages are read. No cookies, no names, no following you around
+            other websites. It tells us &quot;someone read the work page&quot;, never who.
           </p>
         </Reveal>
         <Reveal>
