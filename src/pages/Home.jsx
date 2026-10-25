@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import useStack from '../lib/useStack.js';
+import StackList from '../components/StackList.jsx';
 import { Link } from '../lib/router.jsx';
 import { waLink } from '../lib/perf.js';
 import { PROJECTS, SERVICES, STEPS } from '../lib/data.js';
@@ -11,10 +10,6 @@ import ErrorBoundary from '../components/ErrorBoundary.jsx';
 
 export default function Home() {
   const featured = PROJECTS.slice(0, 3);
-  const svcRef = useRef(null);
-  const wrkRef = useRef(null);
-  useStack(svcRef);
-  useStack(wrkRef);
   return (
     <>
       <section className="hero wrap">
@@ -46,18 +41,18 @@ export default function Home() {
             <p className="eyebrow">What we do</p>
             <h2>One team. Websites that work.</h2>
           </Reveal>
-          <div className="stack-list svc-stack" ref={svcRef}>
-            {SERVICES.map((s, i) => (
-              <div className="stk" key={s.id} style={{ '--i': i }}><div className="stk-in"><Reveal>
+          <StackList className="stack-list svc-stack">
+            {SERVICES.map((s) => (
+              <Reveal key={s.id}>
                 <Card3D as={Link} to={`/services#${s.id}`} className="card svc-card">
                   <span className="num">{s.n}</span>
                   <h3>{s.title}</h3>
                   <p className="muted">{s.lead}</p>
                   <span className="more">Read more &rarr;</span>
                 </Card3D>
-              </Reveal></div></div>
+              </Reveal>
             ))}
-          </div>
+          </StackList>
         </section>
       </ErrorBoundary>
 
@@ -67,9 +62,9 @@ export default function Home() {
             <p className="eyebrow">Selected work</p>
             <h2>Built, live, and open on your phone right now.</h2>
           </Reveal>
-          <div className="stack-list work-stack" ref={wrkRef}>
-            {featured.map((p, i) => (
-              <div className="stk" key={p.id} style={{ '--i': i }}><div className="stk-in"><Reveal>
+          <StackList className="stack-list work-stack">
+            {featured.map((p) => (
+              <Reveal key={p.id}>
                 <Card3D as="a" href={p.url} target="_blank" rel="noopener noreferrer" className="card proj" aria-label={`${p.title}, opens the live site`}>
                   <Img src={p.img} wideSrc={p.imgWide} alt={`${p.title} homepage`} width={1170} height={804} className="shot" />
                   <div className="proj-b">
@@ -78,9 +73,9 @@ export default function Home() {
                     <span className="more">View live &#8599;</span>
                   </div>
                 </Card3D>
-              </Reveal></div></div>
+              </Reveal>
             ))}
-          </div>
+          </StackList>
           <Reveal className="center">
             <Link to="/work" className="btn">
               All projects

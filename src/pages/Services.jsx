@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import useStack from '../lib/useStack.js';
+import { useEffect, useState } from 'react';
+import StackList from '../components/StackList.jsx';
 import { SERVICES, STEPS } from '../lib/data.js';
 import Reveal from '../components/Reveal.jsx';
 import { waLink } from '../lib/perf.js';
@@ -20,8 +20,6 @@ export default function Services() {
     const h = typeof location !== 'undefined' ? location.hash.slice(1) : '';
     return SERVICES.some((x) => x.id === h) ? h : null;
   });
-  const listRef = useRef(null);
-  useStack(listRef);
   const toggle = (id) => {
     setOpen((o) => (o === id ? null : id));
     // Re-measure the stack while the accordion opens/closes.
@@ -40,11 +38,11 @@ export default function Services() {
         <h1>Websites and web apps, built properly.</h1>
         <p className="lead">We start with a clear brief and a private preview, then build, test on real phones and launch.</p>
       </section>
-      <section className="wrap stack-list acc-stack" ref={listRef}>
+      <StackList as="section" className="wrap stack-list acc-stack">
         {SERVICES.map((s, i) => {
           const isOpen = open === s.id;
           return (
-            <div className="stk" key={s.id} style={{ '--i': i }}><div className="stk-in"><Reveal delay={i * 40}>
+            <Reveal key={s.id} delay={i * 40}>
               <article className={'acc' + (isOpen ? ' open' : '')} id={s.id}>
                 <button type="button" className="acc-head" aria-expanded={isOpen} aria-controls={'p-' + s.id} onClick={() => toggle(s.id)}>
                   <span className="num">{s.n}</span>
@@ -82,10 +80,10 @@ export default function Services() {
                   </div>
                 </div>
               </article>
-          </Reveal></div></div>
+          </Reveal>
           );
         })}
-      </section>
+      </StackList>
       <section className="sec wrap">
         <Reveal>
           <p className="eyebrow">How we work</p>

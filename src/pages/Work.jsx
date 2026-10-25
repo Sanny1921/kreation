@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react';
-import useStack from '../lib/useStack.js';
+import { useState } from 'react';
+import StackList from '../components/StackList.jsx';
 import { PROJECTS, FILTERS } from '../lib/data.js';
 import Reveal from '../components/Reveal.jsx';
 import Card3D from '../components/Card3D.jsx';
@@ -8,8 +8,6 @@ import { waLink } from '../lib/perf.js';
 
 export default function Work() {
   const [f, setF] = useState('all');
-  const listRef = useRef(null);
-  useStack(listRef);
   const list = PROJECTS.filter((p) => f === 'all' || p.kind === f);
   return (
     <>
@@ -25,9 +23,9 @@ export default function Work() {
           ))}
         </div>
       </section>
-      <section className="wrap work-list stack-list" ref={listRef}>
-        {list.map((p, i) => (
-          <div className="stk" key={p.id} style={{ '--i': i }}><div className="stk-in"><Reveal>
+      <StackList as="section" className="wrap work-list stack-list">
+        {list.map((p) => (
+          <Reveal key={p.id}>
             <Card3D className="card proj-wide">
               <a href={p.url} target="_blank" rel="noopener noreferrer" className="proj-img" aria-label={`Open ${p.title}`}>
                 <Img src={p.img} wideSrc={p.imgWide} alt={`${p.title} homepage`} width={1170} height={804} className="shot" />
@@ -46,10 +44,10 @@ export default function Work() {
                 </a>
               </div>
             </Card3D>
-          </Reveal></div></div>
+          </Reveal>
         ))}
         {list.length === 0 && <p className="muted">Nothing here yet.</p>}
-      </section>
+      </StackList>
       <section className="sec wrap">
         <Reveal className="cta">
           <h2>Want yours next?</h2>
