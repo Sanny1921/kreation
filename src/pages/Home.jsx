@@ -109,7 +109,7 @@ export default function Home() {
         </Reveal>
         <Reveal className="team">
           <Card3D className="card team-card">
-            <Img src="/img/sunny4-420.webp" wideSrc="/img/sunny4-720.webp" alt="Sunny Tiwari" width={420} height={546} className="shot team-photo" />
+            <Img src="/img/sunny5-420.webp" wideSrc="/img/sunny5-720.webp" alt="Sunny Tiwari" width={420} height={546} className="shot team-photo" />
             <div className="team-b">
               <h3>Sunny Tiwari</h3>
               <p className="role">Web Developer & Designer</p>
