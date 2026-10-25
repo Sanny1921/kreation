@@ -53,7 +53,7 @@ export function subscribeTier(f) {
   return () => listeners.delete(f);
 }
 export const WA_NUMBER = '919288508305';
-export const EMAIL = 'sunnykrtiwari192114@gmail.com';
+export const EMAIL = 'kreation.agent@gmail.com';
 export function waLink(text) {
   return `https://wa.me/${WA_NUMBER}` + (text ? `?text=${encodeURIComponent(text)}` : '');
 }
