@@ -103,6 +103,22 @@ export default function Home() {
       </ErrorBoundary>
 
       <section className="sec wrap">
+        <Reveal>
+          <p className="eyebrow">Our team</p>
+          <h2>Meet the team.</h2>
+        </Reveal>
+        <Reveal className="team">
+          <Card3D className="card team-card">
+            <Img src="/img/sunny-420.webp" wideSrc="/img/sunny-720.webp" alt="Sunny Tiwari" width={420} height={546} className="shot team-photo" />
+            <div className="team-b">
+              <h3>Sunny Tiwari</h3>
+              <p className="role">Web Developer & Designer</p>
+            </div>
+          </Card3D>
+        </Reveal>
+      </section>
+
+      <section className="sec wrap">
         <Reveal className="cta">
           <h2>Need a better website for your business?</h2>
           <p className="muted">Tell us what you sell. We will reply on WhatsApp.</p>
