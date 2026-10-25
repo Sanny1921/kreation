@@ -17,11 +17,23 @@
 <link rel="preload" as="image" href="/d/img/wordmark.webp">
 <style>html,body{color:#e8eaef;background:#000;margin:0}</style>
 <style>
-.teamrow{display:flex;flex-wrap:wrap;gap:16px;margin-top:26px}
-.teamcard{display:flex;align-items:center;gap:16px;border:1px solid #262a33;border-radius:18px;padding:14px 18px;background:#0b0c10;max-width:340px;text-align:left}
-.teamcard img{width:76px;height:99px;object-fit:cover;object-position:top center;border-radius:12px;display:block}
-.teamcard .tn{font-size:1.05rem;letter-spacing:.02em}
-.teamcard .tr{margin-top:4px;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#9aa0ad}
+.teamc{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:26px}
+.teamc .tn{font-size:1.35rem;letter-spacing:.02em}
+.teamc .tr{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#9aa0ad}
+.tdeck{position:relative;width:210px;aspect-ratio:420/546;flex:0 0 auto}
+.tdeck img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:16px;border:1px solid #262a33;background:#0b0c10;box-shadow:0 18px 50px rgba(0,0,0,.55);transition:transform .45s cubic-bezier(.2,.9,.25,1.15),filter .45s,opacity .45s;cursor:pointer;-webkit-user-drag:none;user-select:none}
+#td{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px)}
+#td[hidden]{display:none}
+#td .tdcard{position:relative;width:min(340px,92vw);background:#0b0c10;border:1px solid #262a33;border-radius:22px;padding:20px;text-align:center}
+#td .tdcard img.ph{width:100%;border-radius:14px;display:block}
+#td .tn{margin-top:14px;font-size:1.2rem}
+#td .tr{margin-top:6px;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#9aa0ad}
+#td .row{justify-content:center;margin-top:6px}
+#td .td-desc{margin:0 0 12px;font-size:.9rem;line-height:1.5;color:#9aa0ad}
+#td-lan{height:430px;margin:0 -6px 10px;touch-action:none}
+.lanyard{position:relative;width:100%;height:100%;overflow:hidden}
+.lanyard-canvas{display:block;width:100%;height:100%}
+#td-x{position:absolute;top:10px;right:12px;width:34px;height:34px;border:1px solid #262a33;border-radius:50%;background:rgba(255,255,255,.04);color:#fff;font-size:1rem;cursor:pointer;z-index:2}
 </style>
   <script type="module" crossorigin src="/d/assets/index-BFJSz9W8.js"></script>
   <link rel="stylesheet" crossorigin href="/d/assets/index-p0FdLKAW.css">
@@ -79,11 +91,13 @@
   <section class="st" id="team" data-st="3" aria-label="Our Team">
     <p class="eyebrow">OUR TEAM</p>
     <h2>The people behind<br>the work.</h2>
-    <div class="teamrow">
-      <div class="teamcard">
-        <img src="/d/img/sunny5-720.webp" alt="Sunny Tiwari" width="76" height="99" loading="lazy" decoding="async">
-        <div><div class="tn">Sunny Tiwari</div><div class="tr">Web Developer &amp; Designer</div></div>
+    <div class="teamc">
+      <div class="tdeck" id="tdeck">
+        <img src="/d/img/sunny5-720.webp" srcset="/d/img/sunny5-720.webp 720w, /d/img/sunny5-1080.webp 1080w" sizes="(max-width: 600px) 78vw, 420px" alt="Sunny Tiwari" width="720" height="936" loading="lazy" decoding="async">
       </div>
+      <div class="tn">Sunny Tiwari</div>
+      <div class="tr">Web Developer &amp; Designer</div>
+      <button type="button" class="btn ghost" id="td-open">View details</button>
     </div>
   </section>
 
@@ -100,6 +114,13 @@
   </section>
 </main>
 
+<div id="td" hidden>
+  <div class="tdcard">
+    <button type="button" id="td-x" aria-label="Close">&times;</button>
+    <div id="td-lan" aria-label="Sunny Tiwari - Web Developer and Designer. Designs and builds fast, mobile-first websites and web apps for businesses. Based in India."></div>
+    <p class="td-desc">Designs and builds fast, mobile-first websites and web apps. Works from India.</p>
+  </div>
+</div>
 <div id="notice" hidden>
   <div>
     <h2>This 3D studio is built for desktop.</h2>
@@ -117,5 +138,17 @@
 </div>
 <div class="made" aria-label="Made by KREATION"><span>Made by</span><img src="/d/img/wordmark.webp" alt="KREATION" width="168" height="56"><span class="heart" aria-hidden="true">&#9829;</span></div>
 <div id="spacer" aria-hidden="true"></div>
+<script>
+(function(){
+['/img/sunny-badge3-front.jpg','/img/sunny-badge2-back.jpg','/img/lanyard-k.png'].forEach(function(u){var im=new Image();im.src=u});
+var td=document.getElementById('td'),tdLan=document.getElementById('td-lan'),tdCleanup=null,tdMod=null;
+document.getElementById('td-open').addEventListener('click',function(){td.hidden=false;
+if(!tdMod){import('/d/assets/lanyard.js').then(function(m){tdMod=m;if(!td.hidden)tdCleanup=m.mountLanyard(tdLan,{frontImage:'/img/sunny-badge3-front.jpg',backImage:'/img/sunny-badge2-back.jpg',cardColor:'#0b0c10',strapColor:'#1a1c22',strapImage:'/img/lanyard-k.png',intro:false,finish:'matte',breeze:0.15,size:0.48,strapLength:0.4})}).catch(function(){tdLan.innerHTML='<img class="ph" src="/d/img/sunny5-720.webp" alt="Sunny Tiwari" style="width:100%;border-radius:14px">'});}
+else if(!tdCleanup&&tdMod){tdCleanup=tdMod.mountLanyard(tdLan,{frontImage:'/img/sunny-badge3-front.jpg',backImage:'/img/sunny-badge2-back.jpg',cardColor:'#0b0c10',strapColor:'#1a1c22',strapImage:'/img/lanyard-k.png',intro:false,finish:'matte',breeze:0.15,size:0.48,strapLength:0.4})}
+});
+document.getElementById('td-x').addEventListener('click',function(){td.hidden=true});
+td.addEventListener('click',function(e){if(e.target===td)td.hidden=true});
+})();
+</script>
 </body>
 </html>
