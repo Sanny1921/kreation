@@ -17,7 +17,8 @@
 <link rel="preload" as="image" href="/d/img/wordmark.webp">
 <style>html,body{color:#e8eaef;background:#000;margin:0}</style>
 <style>
-.teamcard{display:flex;align-items:center;gap:16px;border:1px solid #262a33;border-radius:18px;padding:14px 18px;background:#0b0c10;max-width:340px;margin:26px auto 0;text-align:left}
+.teamrow{display:flex;flex-wrap:wrap;gap:16px;margin-top:26px}
+.teamcard{display:flex;align-items:center;gap:16px;border:1px solid #262a33;border-radius:18px;padding:14px 18px;background:#0b0c10;max-width:340px;text-align:left}
 .teamcard img{width:76px;height:99px;object-fit:cover;object-position:top center;border-radius:12px;display:block}
 .teamcard .tn{font-size:1.05rem;letter-spacing:.02em}
 .teamcard .tr{margin-top:4px;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#9aa0ad}
@@ -35,7 +36,8 @@
     <a href="#home" data-go="0">Home</a>
     <a href="#services" data-go="1">Services</a>
     <a href="#work" data-go="2">Work</a>
-    <a href="#contact" data-go="3">Contact</a>
+    <a href="#team" data-go="3">Team</a>
+    <a href="#contact" data-go="4">Contact</a>
   </nav>
   <a class="pill" href="https://wa.me/919288508305?text=Hi%20KREATION%2C%20I%20would%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener noreferrer">WhatsApp</a>
 </header>
@@ -74,13 +76,19 @@
     </div>
   </section>
 
-  <section class="st" id="contact" data-st="3" aria-label="Contact">
+  <section class="st" id="team" data-st="3" aria-label="Our Team">
     <p class="eyebrow">OUR TEAM</p>
-    <div class="teamcard">
-      <img src="/d/img/sunny-720.webp" alt="Sunny Tiwari" width="76" height="99" loading="lazy" decoding="async">
-      <div><div class="tn">Sunny Tiwari</div><div class="tr">Web Developer &amp; Designer</div></div>
+    <h2>The people behind<br>the work.</h2>
+    <div class="teamrow">
+      <div class="teamcard">
+        <img src="/d/img/sunny-720.webp" alt="Sunny Tiwari" width="76" height="99" loading="lazy" decoding="async">
+        <div><div class="tn">Sunny Tiwari</div><div class="tr">Web Developer &amp; Designer</div></div>
+      </div>
     </div>
-    <p class="eyebrow" style="margin-top:34px">CONTACT</p>
+  </section>
+
+  <section class="st" id="contact" data-st="4" aria-label="Contact">
+    <p class="eyebrow">CONTACT</p>
     <h2>Tell us what<br>you need.</h2>
     <p class="lead">The fastest way is WhatsApp. Email works too.</p>
     <div class="row">
