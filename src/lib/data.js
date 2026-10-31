@@ -9,6 +9,16 @@ export const PROJECTS = [
     stack: ['Fast hosting', 'Database', 'Admin roles'],
     url: 'https://valorcup.vercel.app',
     img: '/img/p-valorcup.webp',
+  {
+    id: 'valorcup',
+    title: 'Valor Cup',
+    kind: 'apps',
+    label: 'Live platform',
+    blurb:
+      'A complete tournament site for a college sports league: points table, fixtures, results, team and player pages, plus admin and captain panels, fan polls and certificates.',
+    stack: ['Fast hosting', 'Database', 'Admin roles'],
+    url: 'https://valorcup.vercel.app',
+    img: '/img/p-valorcup.webp',
     imgWide: '/img/p-valorcup-hd.webp'
   },
   {
