@@ -24,35 +24,34 @@ export const PROJECTS = [
     imgWide: '/img/p-pizza-hd.webp'
   },
   {
-    id: 'vanta',
-    title: 'VANTA',
-    kind: 'apps',
-    label: 'Live product',
+    id: 'mething',
+    title: 'Mething Media',
+    kind: 'sites',
+    label: 'Redesign concept',
     blurb:
-      'Temporary chat rooms that disappear. Real-time messaging, voice notes and calls in the browser, with nothing stored permanently.',
-    stack: ['React', 'Node', 'Socket.IO', 'WebRTC'],
-    url: 'https://vanta2-0.vercel.app',
-    img: '/img/p-vanta.webp',
-    imgWide: '/img/p-vanta-hd.webp'
+      'A redesign concept for a video-editing studio: faster loading, real client reels, a founder section and a layout aimed at a global audience. Made as a pitch, not a client delivery.',
+    stack: ['React', 'Lazy-loaded video', 'SEO'],
+    url: 'https://methingmedia-preview.vercel.app',
+    img: '/img/p-mething.webp',
+    imgWide: '/img/p-mething-hd.webp'
   },
   {
-    id: 'cutbrief',
-    title: 'CutBrief',
-    kind: 'ai',
-    label: 'Our own tool',
+    id: 'zynex',
+    title: 'Zynex',
+    kind: 'apps',
+    label: 'Store build',
     blurb:
-      'A small web tool that turns a rough request into a clean brief. A small open-weight AI runs locally, so client messages are never uploaded.',
-    stack: ['Local AI', 'Browser', 'Static hosting'],
-    url: 'https://sanny1921.github.io/cutbrief/',
-    img: '/img/p-cutbrief.webp',
-    imgWide: '/img/p-cutbrief-hd.webp'
+      'A full online store for a home-care brand: product pages with sizes and packs, cart and checkout, coupons and reviews, plus an admin panel for products, orders and banners. In pre-launch testing with the client.',
+    stack: ['React', 'Admin panel', 'Cart + checkout'],
+    url: 'https://zynex-homecare.vercel.app',
+    img: '/img/p-zynex.webp',
+    imgWide: '/img/p-zynex-hd.webp'
   }
 ];
 export const FILTERS = [
   ['all', 'All'],
   ['sites', 'Websites'],
-  ['apps', 'Web apps'],
-  ['ai', 'AI tools']
+  ['apps', 'Web apps']
 ];
 export { SERVICES } from './services.js';
 export const STEPS = [
