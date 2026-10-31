@@ -10,7 +10,7 @@ const TITLES = {
 };
 const DESCS = {
   '/': 'KREATION is a web development agency in India. Fast, mobile-first websites and web apps for businesses.',
-  '/work': 'Live projects by KREATION: Valor Cup, VANTA, CutBrief and a Prashant Pizza redesign concept. Every link opens a working site.',
+  '/work': "Explore KREATION's work: the Valor Cup live platform, Prashant Pizza and Mething Media redesign concepts, and a Zynex store build.",
   '/services': 'Websites, web apps and 3D from KREATION. Start with a fast mobile-first website.',
   '/contact': 'Contact KREATION on WhatsApp or by email. WhatsApp is the fastest way to reach us.',
   '/privacy': 'How KREATION treats your information: what this site collects, and what it never touches.'
