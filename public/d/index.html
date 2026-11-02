@@ -34,6 +34,26 @@
 .lanyard{position:relative;width:100%;height:100%;overflow:hidden}
 .lanyard-canvas{display:block;width:100%;height:100%}
 #td-x{position:absolute;top:10px;right:12px;width:34px;height:34px;border:1px solid #262a33;border-radius:50%;background:rgba(255,255,255,.04);color:#fff;font-size:1rem;cursor:pointer;z-index:2}
+.td-info{display:contents}
+.td-head{display:none}
+@media (min-width:1100px){
+#ui #team{left:6vw;right:auto;width:88vw;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);column-gap:4vw;align-items:center;grid-template-rows:1fr 1fr}
+#ui #team .eyebrow{align-self:end;margin-bottom:10px}
+#ui #team h2{align-self:start;margin-top:0;font-size:clamp(2rem,2.8vw,3.4rem)}
+#ui #team .eyebrow,#ui #team h2{grid-column:1}
+#team .teamc{grid-column:2;grid-row:1 / span 2;align-self:center;margin:0;display:grid;grid-template-columns:clamp(220px,18vw,300px) 1fr;grid-template-rows:auto auto 1fr;column-gap:32px;row-gap:8px;align-items:start;padding:28px;border:1px solid #262a33;border-radius:26px;background:rgba(11,12,16,.55);backdrop-filter:blur(8px)}
+#team .tdeck{grid-row:1 / span 4;width:100%}
+#team .teamc .tn{font-size:clamp(1.7rem,2.2vw,2.3rem);line-height:1.1;margin-top:6px}
+#team .teamc .tr{font-size:.7rem;letter-spacing:.12em;margin-bottom:14px}
+#team .teamc .btn{justify-self:start;align-self:start}
+#td .tdcard{width:min(1000px,90vw);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;column-gap:48px;padding:36px 56px;text-align:left;border-radius:30px}
+#td-lan{height:min(620px,74vh);margin:0;border-radius:18px}
+#td .td-info{display:block}
+#td .td-head{display:block}
+#td .td-head .tn{margin:0;font-size:clamp(2rem,3vw,2.8rem);line-height:1.1}
+#td .td-head .tr{margin:12px 0 24px;font-size:.8rem}
+#td .td-desc{margin:0;font-size:1.1rem;line-height:1.6}
+#td-x{top:20px;right:22px}}
 </style>
   <script type="module" crossorigin src="/d/assets/index-BFJSz9W8.js"></script>
   <link rel="stylesheet" crossorigin href="/d/assets/index-p0FdLKAW.css">
@@ -118,7 +138,7 @@
   <div class="tdcard">
     <button type="button" id="td-x" aria-label="Close">&times;</button>
     <div id="td-lan" aria-label="Sunny Tiwari - Web Developer and Designer. Designs and builds fast, mobile-first websites and web apps for businesses. Based in India."></div>
-    <p class="td-desc">Designs and builds fast, mobile-first websites and web apps. Works from India.</p>
+    <div class="td-info"><div class="td-head"><div class="tn">Sunny Tiwari</div><div class="tr">Web Developer &amp; Designer</div></div><p class="td-desc">Designs and builds fast, mobile-first websites and web apps. Works from India.</p></div>
   </div>
 </div>
 <div id="notice" hidden>
@@ -143,8 +163,8 @@
 ['/img/sunny-badge3-front.jpg','/img/sunny-badge2-back.jpg','/img/lanyard-k.png'].forEach(function(u){var im=new Image();im.src=u});
 var td=document.getElementById('td'),tdLan=document.getElementById('td-lan'),tdCleanup=null,tdMod=null;
 document.getElementById('td-open').addEventListener('click',function(){td.hidden=false;
-if(!tdMod){import('/d/assets/lanyard.js').then(function(m){tdMod=m;if(!td.hidden)tdCleanup=m.mountLanyard(tdLan,{frontImage:'/img/sunny-badge3-front.jpg',backImage:'/img/sunny-badge2-back.jpg',cardColor:'#0b0c10',strapColor:'#1a1c22',strapImage:'/img/lanyard-k.png',intro:false,finish:'matte',breeze:0.15,size:0.48,strapLength:0.4})}).catch(function(){tdLan.innerHTML='<img class="ph" src="/d/img/sunny5-720.webp" alt="Sunny Tiwari" style="width:100%;border-radius:14px">'});}
-else if(!tdCleanup&&tdMod){tdCleanup=tdMod.mountLanyard(tdLan,{frontImage:'/img/sunny-badge3-front.jpg',backImage:'/img/sunny-badge2-back.jpg',cardColor:'#0b0c10',strapColor:'#1a1c22',strapImage:'/img/lanyard-k.png',intro:false,finish:'matte',breeze:0.15,size:0.48,strapLength:0.4})}
+if(!tdMod){import('/d/assets/lanyard.js').then(function(m){tdMod=m;if(!td.hidden)tdCleanup=m.mountLanyard(tdLan,{frontImage:'/img/sunny-badge3-front.jpg',backImage:'/img/sunny-badge2-back.jpg',cardColor:'#0b0c10',strapColor:'#1a1c22',strapImage:'/img/lanyard-k.png',intro:false,finish:'matte',breeze:0.15,size:(innerWidth>=1100?Math.min(.85,.74*(tdLan.clientHeight||620)/620):0.48),strapLength:(innerWidth>=1100?0.5:0.4)})}).catch(function(){tdLan.innerHTML='<img class="ph" src="/d/img/sunny5-720.webp" alt="Sunny Tiwari" style="width:100%;border-radius:14px">'});}
+else if(!tdCleanup&&tdMod){tdCleanup=tdMod.mountLanyard(tdLan,{frontImage:'/img/sunny-badge3-front.jpg',backImage:'/img/sunny-badge2-back.jpg',cardColor:'#0b0c10',strapColor:'#1a1c22',strapImage:'/img/lanyard-k.png',intro:false,finish:'matte',breeze:0.15,size:(innerWidth>=1100?Math.min(.85,.74*(tdLan.clientHeight||620)/620):0.48),strapLength:(innerWidth>=1100?0.5:0.4)})}
 });
 document.getElementById('td-x').addEventListener('click',function(){td.hidden=true});
 td.addEventListener('click',function(e){if(e.target===td)td.hidden=true});
