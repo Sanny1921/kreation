@@ -41,13 +41,17 @@ export default function Contact() {
         <Reveal delay={60}>
           <Card3D className="card ct-card">
             <h2 className="h3">Email</h2>
-            <p className="muted brk">{EMAIL}</p>
-            <a className="btn btn-solid" href={`mailto:${EMAIL}?subject=${encodeURIComponent('Project enquiry')}`}>
-              Send an email
-            </a>
-            <button className="btn" onClick={() => copy(EMAIL, 'em')}>
-              {copied === 'em' ? 'Copied' : 'Copy address'}
-            </button>
+            {[[EMAIL, 'em'], ['hello@kreationdev.in', 'em2']].map(([addr, key]) => (
+              <div className="em-row" key={key}>
+                <p className="muted brk">{addr}</p>
+                <a className="btn btn-solid" href={`mailto:${addr}?subject=${encodeURIComponent('Project enquiry')}`}>
+                  Email {addr}
+                </a>
+                <button className="btn" onClick={() => copy(addr, key)}>
+                  {copied === key ? 'Copied' : `Copy ${addr}`}
+                </button>
+              </div>
+            ))}
           </Card3D>
         </Reveal>
         <Reveal delay={120} className="span2">
@@ -120,4 +124,4 @@ export default function Contact() {
       </section>
     </>
   );
-}
+                }
