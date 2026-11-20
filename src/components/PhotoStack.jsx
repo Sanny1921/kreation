@@ -18,6 +18,7 @@ export default function PhotoStack({ members, onFrontChange }) {
   };
   const visible = multi ? order : [0];
   const front = members[visible[0]];
+  if (!multi) return <FlipCard m={members[0]} reduce={reduce} />;
   return (
     <div className="pstack-wrap">
       <div className="pstack">
@@ -59,3 +60,34 @@ export default function PhotoStack({ members, onFrontChange }) {
     </div>
   );
 }
+
+// Single member: tap anywhere on the photo to flip it. Back shows a short intro and a Back control.
+function FlipCard({ m, reduce }) {
+  const [flipped, setFlipped] = useState(false);
+  const toggle = () => setFlipped((f) => !f);
+  const onKey = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } };
+  return (
+    <div className="pstack-wrap">
+      <div className="pstack flip">
+        <motion.div
+          className="flip-inner"
+          initial={false}
+          animate={{ rotateY: flipped ? 180 : 0 }}
+          transition={reduce ? { duration: 0 } : { duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+        >
+          <div className="flip-face flip-front" role="button" tabIndex={flipped ? -1 : 0} aria-hidden={flipped} onClick={toggle} onKeyDown={onKey} aria-label={`Photo of ${m.name}. Tap to read about ${m.name}.`}>
+            <img src={m.src} srcSet={m.srcSet} sizes={m.sizes} alt={m.name} width={m.width} height={m.height} draggable="false" decoding="async" />
+            <span className="flip-hint">View details</span>
+          </div>
+          <div className="flip-face flip-back" role="button" tabIndex={flipped ? 0 : -1} aria-hidden={!flipped} onClick={toggle} onKeyDown={onKey} aria-label="Back. Tap to flip back to the photo.">
+            <p className="flip-role">{m.role}</p>
+            <p className="flip-intro">{m.intro}</p>
+            <span className="flip-back-btn">Back</span>
+          </div>
+        </motion.div>
+      </div>
+      <h3>{m.name}</h3>
+      <p className="role">{m.role}</p>
+    </div>
+  );
+              }
