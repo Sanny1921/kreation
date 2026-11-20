@@ -6,15 +6,13 @@ import { PROJECTS, SERVICES, STEPS } from '../lib/data.js';
 import KPoster from '../components/Hero3D.jsx';
 import Reveal from '../components/Reveal.jsx';
 import PhotoStack from '../components/PhotoStack.jsx';
-import Lanyard from '../components/Lanyard.jsx';
 import Card3D from '../components/Card3D.jsx';
 import Img from '../components/Img.jsx';
 import ErrorBoundary from '../components/ErrorBoundary.jsx';
 
-const TEAM = [{ id: 'sunny', name: 'Sunny Tiwari', role: 'Web Developer & Designer', src: '/img/sunny5-720.webp', srcSet: '/img/sunny5-420.webp 420w, /img/sunny5-720.webp 720w, /img/sunny5-1080.webp 1080w', sizes: 'min(320px, 78vw)', width: 720, height: 936 }];
+const TEAM = [{ id: 'sunny', name: 'Sunny Tiwari', role: 'Web Developer & Designer', src: '/img/sunny5-720.webp', srcSet: '/img/sunny5-420.webp 420w, /img/sunny5-720.webp 720w, /img/sunny5-1080.webp 1080w', sizes: 'min(320px, 78vw)', width: 720, height: 936, intro: 'Sunny Tiwari is a web developer and designer at KREATION. He creates responsive websites and web applications, focusing on thoughtful design, intuitive interfaces and performance.' }];
 
 export default function Home() {
-  const [detailsOpen, setDetailsOpen] = useState(false);
   useEffect(() => {
     ['/img/sunny-badge3-front.jpg', '/img/sunny-badge2-back.jpg', '/img/lanyard-k.png'].forEach((src) => { const im = new Image(); im.src = src; });
   }, []);
@@ -118,9 +116,6 @@ export default function Home() {
         </Reveal>
         <Reveal className="teamc">
           <PhotoStack members={TEAM} />
-          <div className="btn-row center">
-            <button type="button" className="btn" onClick={() => setDetailsOpen(true)}>View details</button>
-          </div>
         </Reveal>
       </section>
 
@@ -138,17 +133,6 @@ export default function Home() {
           </div>
         </Reveal>
       </section>
-      {detailsOpen && (
-        <div className="td-overlay" role="dialog" aria-modal="true" aria-label="Sunny Tiwari details" onClick={() => setDetailsOpen(false)}>
-          <div className="td-card" onClick={(e) => e.stopPropagation()}>
-            <button type="button" className="td-x" onClick={() => setDetailsOpen(false)} aria-label="Close">&times;</button>
-            <div className="td-lanyard">
-              <Lanyard frontImage="/img/sunny-badge3-front.jpg" backImage="/img/sunny-badge2-back.jpg" cardColor="#0b0c10" strapColor="#1a1c22" strapImage="/img/lanyard-k.png" intro={false} finish="matte" breeze={0.15} size={0.48} strapLength={0.4} />
-            </div>
-            <p className="td-desc">Designs and builds fast, mobile-first websites and web apps. Works from India.</p>
-          </div>
-        </div>
-      )}
     </>
   );
 }
